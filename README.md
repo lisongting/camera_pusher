@@ -29,8 +29,14 @@ There are two kinds of programs :
 
 First one is C++ version. The code is in /camera_pusher_program .
 Compile :
+
 ```
 g++ camera_pusher.cpp  -o pusher -lOpenNI2 -lavformat -lavdevice -lavcodec -lavutil -lpthread -lswscale -lavfilter -lswresample  -lz -llzma -lbz2 -lrt -ltheoraenc -ltheoradec -lx264 `pkg-config opencv --cflags --libs`
+```
+
+Run:
+```
+./pusher
 ```
 
 ## 2.Ros Version 
