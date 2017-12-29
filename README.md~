@@ -25,13 +25,13 @@ rtmp {
 
 There are two kinds of programs :
 
-## 1.Version for C++  
+## 1.C++ Version
 
 First one is C++ version. The code is in /camera_pusher_program .
 Compile :
 
 ```
-g++ rgb_streamer.cpp  -o pusher -lOpenNI2 -lavformat -lavdevice -lavcodec -lavutil -lpthread -lswscale -lavfilter -lswresample  -lz -llzma -lbz2 -lrt -ltheoraenc -ltheoradec -lx264 `pkg-config opencv --cflags --libs`
+g++ camera_pusher.cpp  -o pusher -lOpenNI2 -lavformat -lavdevice -lavcodec -lavutil -lpthread -lswscale -lavfilter -lswresample  -lz -llzma -lbz2 -lrt -ltheoraenc -ltheoradec -lx264 `pkg-config opencv --cflags --libs`
 ```
 
 Run:
@@ -39,9 +39,7 @@ Run:
 ./pusher
 ```
 
-Note :This raw program  just sends RGB camera stream to RTMP-Server .
-
-## 2.Version for ROS 
+## 2.Ros Version 
 
 Second one is [ROS](http://wiki.ros.org/) (Robot Operating System)  version.The code is in **/xbot2_tools**  ,you can build it by `catkin_make --pkg xbot2_tools ` . 
 
