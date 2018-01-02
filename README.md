@@ -59,3 +59,9 @@ rtmp address of Depth video -- rtmp://localhost/depth
 
 (You can change it freely as long as your server has been configured correctly)
 
+For RealSense R200 , you can use this command to push camera stream to RTMP-server：
+```
+ffmpeg -f v4l2  -i /dev/video3 -r 25 -b:v 400k -vcodec h264 -preset superfast -tune zerolatency -an  -f flv rtmp://localhost/rgb
+
+```
+
