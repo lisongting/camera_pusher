@@ -61,9 +61,9 @@ rtmp address of Depth video -- rtmp://localhost/depth
 
 
 
-##For RealSense R200
+## For RealSense R200
 
-For RealSense R200 , you don't need to run `camera_pusher`  or run `./pusher` . You can use this command to push camera stream to RTMP-server：
+For RealSense R200 , you don't need to run `camera_pusher`  or  `./pusher` . You can use this command to push camera stream to RTMP-server：
 
 ```
 ffmpeg -f v4l2  -i /dev/video3 -r 25 -b:v 400k -vcodec h264 -preset superfast -tune zerolatency -an  -f flv rtmp://localhost/rgb
