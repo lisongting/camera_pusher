@@ -6,7 +6,7 @@ Please make sure the RTMP-Server have started,and the camera device is connected
 I am using nginx-rtmp server ,please make your stream server supports RTMP protocal and make your **nginx.conf** like this:
 
 ```
-# ******* custom config******
+# ******* custom config ******
 rtmp {
     server {
         listen 1935;
@@ -20,7 +20,7 @@ rtmp {
 		}
     }
 }
-# ******* custom config******
+# ******* custom config ******
 ```
 
 There are two kinds of programs :
@@ -59,9 +59,24 @@ rtmp address of Depth video -- rtmp://localhost/depth
 
 (You can change it freely as long as your server has been configured correctly)
 
-For RealSense R200 , you can use this command to push camera stream to RTMP-server：
+
+
+##For RealSense R200
+
+For RealSense R200 , you don't need to run `camera_pusher`  or run `./pusher` . You can use this command to push camera stream to RTMP-server：
+
 ```
 ffmpeg -f v4l2  -i /dev/video3 -r 25 -b:v 400k -vcodec h264 -preset superfast -tune zerolatency -an  -f flv rtmp://localhost/rgb
-
 ```
 
+If there's a mistake like this:
+
+![1](images/1.jpg)
+
+Use :
+
+```
+ffmpeg -f v4l2  -i /dev/video2 -r 25 -b:v 400k -vcodec h264 -preset superfast -tune zerolatency -an  -f flv rtmp://localhost/rgb
+```
+
+Or use `ls /dev/video* ` to find a suitable video device .  
