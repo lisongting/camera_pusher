@@ -80,3 +80,9 @@ ffmpeg -f v4l2  -i /dev/video2 -r 25 -b:v 400k -vcodec h264 -preset superfast -t
 ```
 
 Or use `ls /dev/video* ` to find a suitable video device .  
+
+Sometimes , an error occurs on Ubuntu 14.04 like this:
+
+![2](images/2.jpg)
+
+It seems to be a bug of ffmpeg.see [link1](https://github.com/gpac/gpac/issues/210) , [link2](https://superuser.com/questions/1048637/ffmpeg-video-recording-freezes-after-invalid-data-found-when-processing-input) .
